@@ -1,24 +1,80 @@
-*{
-box-sizing: border-box;
-border: 0;
-margin: 0;
-padding: 0;
-}
-img{
-max-width: 100%;
-height: auto;
-}
-.card{
-width: 90%;
-margin-inline: auto;
-padding: 1rem;
-direction: flex;
+* {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-background-color: brown;
+body {
+  background-color: #292929; /* Dark charcoal background from the design */
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.column-01{
+.card {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2rem;
+  display: flex;             /* Fixes "direction: flex" */
+  align-items: center;       /* Vertically centers the left text with the grid */
+  justify-content: space-between;
+  gap: 4rem;
+}
 
+/* --- Column 1: Left Text --- */
+.column-01 {
+  flex: 1;                   /* Takes up the left side */
+  max-width: 380px;          /* Keeps paragraph wrapping naturally without <br> */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* Prevents the button from stretching full-width */
+  gap: 1.5rem;
+}
+
+.column-01 h1 {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;    /* Stacks the three words vertically */
+}
+
+.word-pink { color: #f6b6c1; }
+.word-blue { color: #8ec5fc; }
+.word-teal { color: #6ee7b7; }
+
+.column-01 p {
+  color: #d1d5db;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+button {
+  background-color: #ffffff;
+  color: #292929;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px 40px;
+  border-radius: 999px;      /* Full pill shape */
+  cursor: pointer;
+}
+
+/* --- Column 2: 4x4 Image Grid --- */
+.image-grid {
+  flex: 1.3;                 /* Gives the grid slightly more width than text */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 1rem;                 /* Even spacing between all tiles */
+}
+
+.image-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* Forces every tile into a perfect square */
+  object-fit: cover;         /* Prevents stretching if source photos aren't square */
+  border-radius: 20px;       /* Matches the rounded corners on every tile */
+  display: block;
 }

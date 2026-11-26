@@ -1,0 +1,24 @@
+*{
+box-sizing: border-box;
+border: 0;
+margin: 0;
+padding: 0;
+}
+img{
+max-width: 100%;
+height: auto;
+}
+.card{
+width: 90%;
+margin-inline: auto;
+padding: 1rem;
+direction: flex;
+}
+
+body{
+background-color: brown;
+}
+
+.column-01{
+
+}
